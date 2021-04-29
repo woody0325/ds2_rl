@@ -105,6 +105,7 @@ def plot_two_episode_stats(stats1, stats2, smoothing_window=10, noshow=False):
     plt.plot(stats2.episode_lengths, label='stats2')
     plt.xlabel("Episode")
     plt.ylabel("Episode Length")
+    plt.legend()
     plt.title("Episode Length over Time")
     if noshow:
         plt.close(fig1)
@@ -119,6 +120,7 @@ def plot_two_episode_stats(stats1, stats2, smoothing_window=10, noshow=False):
     plt.plot(rewards_smoothed2, label='stats2')
     plt.xlabel("Episode")
     plt.ylabel("Episode Reward (Smoothed)")
+    plt.legend()
     plt.title("Episode Reward over Time (Smoothed over window size {})".format(smoothing_window))
     if noshow:
         plt.close(fig2)
@@ -131,6 +133,7 @@ def plot_two_episode_stats(stats1, stats2, smoothing_window=10, noshow=False):
     plt.plot(np.cumsum(stats2.episode_lengths), np.arange(len(stats2.episode_lengths)), label='stats2')
     plt.xlabel("Time Steps")
     plt.ylabel("Episode")
+    plt.legend()
     plt.title("Episode per time step")
     if noshow:
         plt.close(fig3)
